@@ -55,6 +55,8 @@ function updateURLList() {
 
     // Create the remove button
     const removeButton = document.createElement('button');
+    removeButton.className += 'btn'
+    removeButton.className += ' btn-warning'
     removeButton.textContent = 'X';
     removeButton.addEventListener('click', () => removeUrl(index));
 
