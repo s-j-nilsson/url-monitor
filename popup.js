@@ -25,7 +25,9 @@ function updateURLList() {
     link.className += urlStatuses[index] === 'up' ? 'list-group-item-success' : 'list-group-item-danger';
     link.textContent = url;
 
-    const statusText = document.createTextNode(` - ${urlStatuses[index] || 'checking...'}`);
+    const status = urlStatuses[index] === 'up' ? 'uppe' : 'nere'
+
+    const statusText = document.createTextNode(` - ${status || 'kontrollerar...'}`);
 
     link.appendChild(statusText);
 

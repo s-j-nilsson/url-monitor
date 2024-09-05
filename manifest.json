@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "URL Monitor",
+  "name": "URL-övervakare",
   "version": "1.0",
-  "description": "Monitors a set of URLs to check if they are up or down.",
+  "description": "Övervakar ett antal URL:er för att se om dom är uppe eller inte.",
   "permissions": [
     "storage",
     "alarms",

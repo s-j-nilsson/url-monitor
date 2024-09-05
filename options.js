@@ -5,6 +5,7 @@ let pollInterval = 5;
 document.addEventListener('DOMContentLoaded', () => {
   loadSettings();
 
+  document.getElementById('urlInput').addEventListener("keyup", (event) => { if (event.key === "Enter"){addUrl();}});
   document.getElementById('addUrl').addEventListener('click', addUrl);
   document.getElementById('saveSettings').addEventListener('click', saveSettings);
 
@@ -43,33 +44,27 @@ function updateURLList() {
   const urlList = document.getElementById('urlList');
   urlList.innerHTML = '';
   urls.forEach((url, index) => {
-    const listItem = document.createElement('li');
+    const listElement = document.createElement('li');
+    listElement.className = 'list-group-item d-flex justify-content-between align-items-center ';
 
-    // Create link and status text
     const link = document.createElement('a');
     link.href = url;
     link.target = "_blank";
+    link.className += 'text-decoration-none ';
     link.textContent = url;
-
-    const statusText = document.createTextNode(` - ${urlStatuses[index] || 'checking...'}`);
 
     // Create the remove button
     const removeButton = document.createElement('button');
     removeButton.className += 'btn ';
     removeButton.className += 'btn-danger ';
-    removeButton.className += 'p-1 ';
     removeButton.className += 'float-end';
     removeButton.textContent = 'X';
     removeButton.addEventListener('click', () => removeUrl(index));
 
-    listItem.appendChild(link);
-    listItem.appendChild(statusText);
-    listItem.appendChild(removeButton);
+    listElement.appendChild(link);
+    listElement.appendChild(removeButton);
 
-    // Set color based on the status
-    listItem.style.color = urlStatuses[index] === 'up' ? 'green' : 'red';
-
-    urlList.appendChild(listItem);
+    urlList.appendChild(listElement);
   });
 }
 

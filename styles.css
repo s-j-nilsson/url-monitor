@@ -4,10 +4,6 @@ body {
   width: 600px;
 }
 
-input[type="text"], input[type="number"] {
-  width: 200px;
-}
-
 button {
   margin-left: 10px;
 }
@@ -15,11 +11,6 @@ button {
 ul {
   list-style: none;
   padding: 0;
-}
-
-li {
-  margin-left: 20px;
-  margin-bottom: 20px;
 }
 
 a {

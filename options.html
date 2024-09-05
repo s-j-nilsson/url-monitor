@@ -10,14 +10,14 @@
 <body>
 <div id="container">
   <h1>Inställningar</h1>
-  <div class="container">
-    <input id="urlInput" type="text" placeholder="Add URL" />
+  <div class="d-flex">
+    <input id="urlInput" type="text" placeholder="Lägg till URL" class="col-10" />
     <button id="addUrl">Lägg till</button>
   </div>
-  <ul id="urlList"></ul>
+  <ul id="urlList" class="list-group mb-2 mt-2"></ul>
   <label for="interval">Intervall (minuter): </label>
-  <div class="container">
-    <input id="interval" type="number" min="1" value="5" />
+  <div class="d-flex">
+    <input id="interval" type="number" min="1" value="5" class="col-3"/>
     <button id="saveSettings">Spara</button>
   </div>
 
